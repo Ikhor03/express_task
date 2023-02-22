@@ -35,11 +35,6 @@ router.post('/profile', upload.single('avatar'), (req, res, next) =>{
 
     const targetRename = path.join(__dirname, 'uploads', avatar.originalname)
     fs.renameSync(avatar.path, targetRename)
-    // res.send({
-    //     name,
-    //     age,
-    //     avatar
-    // })
 
     res.sendFile(targetRename)
 })
